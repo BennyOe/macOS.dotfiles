@@ -19,6 +19,8 @@ do
                               background.color=$BACKGROUND_1                \
                               background.drawing=on                         \
                               label.font="sketchybar-app-font:Regular:16.0" \
+                              label.color=$GREY                            \
+                              label.highlight_color=$BLUE                   \
                               label.background.height=26                    \
                               label.background.drawing=on                   \
                               label.background.color=$BACKGROUND_2          \
