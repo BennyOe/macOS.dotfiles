@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+status=$(curl -o /dev/null -s -w "%{http_code}\n" wttr.in)
+
+if [[ "$status" == *"5"* ]]; then
+    exit
+fi
+
 data=$(curl -s 'wttr.in/Hamburg?format=%C+|+%t')
 
 if [[ "$data" == *"nknown"* ]]; then
