@@ -1,0 +1,107 @@
+#!/usr/bin/env sh
+
+source "$HOME/.config/sketchybar/colors.sh" # Loads all defined colors
+source "$HOME/.config/sketchybar/icons.sh" # Loads all defined icons
+
+ITEM_DIR="$HOME/.config/sketchybar/items" # Directory where the items are configured
+PLUGINS="$HOME/.config/sketchybar/plugins"
+
+PADDINGS=3 # All paddings use this value (icon, label, background)
+
+# Setting up the general bar appearance and default values
+sketchybar --bar     height=30                                         \
+                     color=$BAR_COLOR                                  \
+                     shadow=off                                        \
+                     position=top                                      \
+                     sticky=on                                         \
+                     padding_right=7                                   \
+                     padding_left=7                                    \
+                     corner_radius=0                                   \
+                     y_offset=0                                        \
+                     margin=0                                          \
+                     blur_radius=0                                     \
+                     notch_width=0                                     \
+                                                                       \
+           --default updates=when_shown                                \
+                     icon.color=$ICON_COLOR                            \
+                     icon.padding_left=$PADDINGS                       \
+                     icon.padding_right=$PADDINGS                      \
+                     label.font="Hack Nerd Font:Semibold:12.0"         \
+                     label.color=$LABEL_COLOR                          \
+                     label.padding_left=$PADDINGS                      \
+                     label.padding_right=$PADDINGS                     \
+                     label.y_offset=-2                                 \
+                     background.padding_right=$PADDINGS                \
+                     background.padding_left=$PADDINGS                 \
+                     background.height=26                              \
+                     background.corner_radius=0                        \
+                     popup.background.border_width=0                   \
+                     popup.background.corner_radius=0                  \
+                     popup.background.border_color=$POPUP_BORDER_COLOR \
+                     popup.background.color=$POPUP_BACKGROUND_COLOR    \
+                     popup.background.shadow.drawing=on
+
+# Left
+source "$ITEM_DIR/spaces.sh"
+source "$ITEM_DIR/front_app.sh"
+
+# Right Items
+sketchybar --default             \
+  label.padding_left=0           \
+  label.padding_right=0          \
+  icon.padding_left=20           \
+  icon.padding_right=8           \
+  icon.y_offset=-2               \
+  --add item clock right         \
+  --set clock                    \
+    update_freq=10               \
+    script="$PLUGINS/clock.sh"   \
+    icon=                       \
+    icon.y_offset=-2             \
+    icon.color=0xff8fbcbb        \
+    label.padding_right=10       \
+  --add item date right          \
+  --set date                     \
+    update_freq=100              \
+    script="$PLUGINS/date.sh"    \
+    icon=                       \
+    icon.y_offset=-2             \
+    icon.color=0xffb48ead        
+
+    source "$ITEM_DIR/brew.sh"
+    source "$ITEM_DIR/github.sh"
+
+sketchybar --add item battery right       \
+  --set battery                  \
+    update_freq=3                \
+    script="$PLUGINS/power.sh"   \
+    icon=                       \
+    icon.color=0xffbf616a        \
+  --add item sound right         \
+  --set sound                    \
+    update_freq=5                \
+    icon.color=0xff5e81ac        \
+    script="$PLUGINS/sound.sh"   \
+  --add item weather right       \
+  --set weather                  \
+    update_freq=1800             \
+    icon.color=0xffebcb8b        \
+    script="$PLUGINS/weather.sh" \
+  --add item wifi right          \
+  --set wifi                     \
+    script="$PLUGINS/wifi.sh"    \
+    update_freq=5                \
+
+# Center Items
+sketchybar --add event window_focus \
+              --add event title_change
+
+sketchybar --add item title left                          \
+              --set title script="$PLUGINS/window_title.sh" \
+              --subscribe                                   \
+                title window_focus front_app_switched space_change title_change
+
+# Forcing all item scripts to run (never do this outside of sketchybarrc)
+sketchybar --update
+
+echo "sketchybar configuation loaded.."

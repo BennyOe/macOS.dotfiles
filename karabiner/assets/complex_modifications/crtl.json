@@ -1,0 +1,33 @@
+{
+  "title": "ctrl to escape",
+  "rules": [
+    {
+      "description": "set ctrl to esc when pressed short",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "left_control",
+            "modifiers": {
+              "optional": ["caps_lock"]
+            }
+          },
+          "parameters": {
+            "basic.to_if_alone_timeout_milliseconds": 150,
+            "basic.to_if_held_down_threshold_milliseconds": 150
+          },
+          "to_if_alone": [
+            {
+              "key_code": "escape"
+            }
+          ],
+          "to_if_held_down": [
+            {
+              "key_code": "left_control"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "title": "Launch apps",
+  "rules": [
+    {
+      "description": "control + option + enter opens iTerm",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "return_or_enter",
+            "modifiers": {
+              "mandatory": ["left_option", "left_control"],
+              "optional": []
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open '/Applications/iterm.app'"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
