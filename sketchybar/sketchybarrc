@@ -43,7 +43,6 @@ sketchybar --bar     height=30                                         \
 
 # Left
 source "$ITEM_DIR/spaces.sh"
-source "$ITEM_DIR/front_app.sh"
 
 # Right Items
 sketchybar --default             \
@@ -92,14 +91,6 @@ sketchybar --add item battery right       \
     script="$PLUGINS/wifi.sh"    \
     update_freq=5                \
 
-# Center Items
-sketchybar --add event window_focus \
-              --add event title_change
-
-sketchybar --add item title left                          \
-              --set title script="$PLUGINS/window_title.sh" \
-              --subscribe                                   \
-                title window_focus front_app_switched space_change title_change
 
 # Forcing all item scripts to run (never do this outside of sketchybarrc)
 sketchybar --update
