@@ -59,18 +59,18 @@ yabai -m rule --add app="Pritunl" manage=off
 yabai -m rule --add app="WebStorm|PhpStorm|IntelliJ" title="^Push|Pull|Preferences|Commit|Run" manage=off
 
 # Rules for Applications on spaces
-yabai -m rule --add app="^Slack$" space=7
-yabai -m rule --add app="^Microsoft Outlook$" space=ˆ7
+yabai -m rule --add app="^Slack$" space=8
+yabai -m rule --add app="^Microsoft Outlook$" space=ˆ8
 
-yabai -m rule --add app="^Signal$" space=8
-yabai -m rule --add app="^WhatsApp$" space=8
+yabai -m rule --add app="^Signal$" space=7
+yabai -m rule --add app="^WhatsApp$" space=7
 
-yabai -m rule --add app="^WebStorm$" space=3
-yabai -m rule --add app="^PhpStorm$" space=3
-yabai -m rule --add app="^IntelliJ IDEA$" space=3
-yabai -m rule --add app="^Xcode$" space=3
+yabai -m rule --add app="^WebStorm$" space=1
+yabai -m rule --add app="^PhpStorm$" space=1
+yabai -m rule --add app="^IntelliJ IDEA$" space=1
+yabai -m rule --add app="^Xcode$" space=1
 
-yabai -m rule --add app="^Microsoft Teams$" space=4
+yabai -m rule --add app="^Microsoft Teams$" space=3
 
 yabai -m config layout bsp
 
