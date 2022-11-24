@@ -36,7 +36,7 @@ case "${condition}" in
     icon=""
     ;;
   *)
-    icon="$condition"
+    icon="☉"
     ;;
 esac
 
