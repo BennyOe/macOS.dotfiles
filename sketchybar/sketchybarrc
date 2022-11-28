@@ -19,7 +19,7 @@ sketchybar --bar     height=30                                         \
                      corner_radius=0                                   \
                      y_offset=0                                        \
                      margin=0                                          \
-                     blur_radius=0                                     \
+                     blur_radius=30                                     \
                      notch_width=0                                     \
                                                                        \
            --default updates=when_shown                                \

@@ -31,4 +31,4 @@ sketchybar   --add item       separator left                          \
                               background.padding_right=25             \
                               label.drawing=off                       \
                               associated_display=active               \
-                              icon.color=$WHITE
+                              icon.color=$MAGENTA
