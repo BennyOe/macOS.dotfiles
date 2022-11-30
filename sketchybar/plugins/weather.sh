@@ -32,11 +32,20 @@ case "${condition}" in
   *"lightrain"*)
     icon=""
     ;;
+  *"Patchy rain"*)
+    icon=""
+    ;;
+  *"snow"*)
+    icon=""
+    ;;
   "overcast")
     icon=""
     ;;
+  "mist")
+    icon="敖"
+    ;;
   *)
-    icon="☉"
+    icon=""
     ;;
 esac
 
