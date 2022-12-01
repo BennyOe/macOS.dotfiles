@@ -1,0 +1,134 @@
+"======================================================================================================================
+" Useful hints to setup the IDE
+
+" To cycle with tab through code completion options set the 'selectNextCompletionOption' in the settings to tab and remove tab from the standard behaviour
+" To enable the continuous scrolling via 'j' and 'k' type 'defaults write com.jetbrains.intellij ApplePressAndHoldEnabled -bool false' in the terminal
+"======================================================================================================================
+
+" Basic settings
+set number relativenumber
+set idearefactormode=keep
+set ideajoin                      " smart line join with J
+set hlsearch                      " highlight search occurrences
+set ignorecase                    " ignore case in search patterns
+set smartcase                     " no ignore case when pattern is uppercase
+set incsearch                     " show search results while typing
+set wrapscan                      " searches wrap around the end of the file
+set history=10000                 " keep x lines of command line history
+set scrolloff=5 sidescrolloff=10  " keep some lines before and after the cursor visible
+
+" setting the leader key
+let mapleader = " "
+
+" NerdTree settings
+set NERDTree
+let g:NERDTreeMapActivateNode='l'
+let g:NERDTreeMapJumpParent='h'
+let g:NERDTreeFocus=0
+nnoremap <c-b> :NERDTreeToggle<CR>
+nmap <leader>h <Action>(ActivateProjectToolWindow)
+
+" editor
+nmap + :action EditorIncreaseFontSize<CR>
+nmap - :action EditorDecreaseFontSize<CR>
+nmap = :action EditorResetFontSize<CR>
+
+" movements
+vmap <c-j> <Action>(MoveLineDown)
+vmap <c-k> <Action>(MoveLineUp)
+nmap <c-j> <Action>(MoveLineDown)
+nmap <c-k> <Action>(MoveLineUp)
+
+nmap <c-o> <Action>(Back)
+nmap <c-i> <Action>(Forward)
+
+" Navigate through method signatures
+map [[ <Action>(MethodUp)
+map ]] <Action>(MethodDown)
+
+" system clipboarad
+vmap <leader>y "+y
+vmap <leader>d "+d
+nmap <leader>y "+yy
+nmap <leader>p "+p
+nmap <leader>P "+P
+vmap <leader>p "+p
+vmap <leader>P "+P
+
+" switching tabs
+nmap <c-h> <action>(PreviousTab)
+nmap <c-l> <action>(NextTab)
+
+" split views
+nnoremap <leader>V :vsplit<CR>
+nnoremap <leader>H :split<CR>
+nmap <leader>x <Action>(CloseContent)
+nmap <leader>sx <Action>(Unsplit)
+
+" split navigation
+nmap <leader>k <Action>(PrevSplitter)
+nmap <leader>j <Action>(NextSplitter)
+
+" running the code
+nmap <leader><leader>rr <Action>(Run)
+nmap <leader><leader>rd <Action>(Debug)
+nmap <leader><leader>ra <Action>(Rerun)
+nmap <leader><leader>rs <Action>(Stop)
+
+" code commands
+nmap <leader>g <Action>(Generate)
+nmap <leader>rn <Action>(RenameElement)
+nmap <leader>sw <Action>(SurroundWith)
+nmap <leader>nc <Action>(NewClass)
+nmap <leader>nf <Action>(NewFile)
+nmap <leader>nd <Action>(NewDir)
+
+" line comment
+nmap <leader>c<leader> <Action>(CommentByLineComment)
+vmap <leader>c<leader> <Action>(CommentByLineComment)
+
+" errors
+nmap e <Action>(GotoNextError)
+nmap E <Action>(GotoPreviousError)
+
+" highlight usages
+nmap <leader>n <Action>(HighlightUsagesInFile)
+nmap <leader><leader>n :noh<CR>
+nmap N <Action>(GotoNextElementUnderCaretUsage)
+
+" goto
+nmap gi :action GotoImplementation<CR>
+nmap gs :action GotoSuperMethod<CR>
+nmap gd :action GotoDeclaration<CR>
+nmap gt :action GotoTest<CR>
+
+" imports
+nmap <leader>oi <Action>(OptimizeImports)
+
+" reformat the code
+map <leader>f <Action>(ReformatCode)
+
+" open terminal
+nmap <leader>t <Action>(ActivateTerminalToolWindow)
+
+"  show
+nmap <leader>rf <Action>(RecentFiles)
+nmap <leader>q <Action>(QuickJavaDoc)
+nmap <leader>a <Action>(Annotate)
+nmap <leader>u <Action>(FindUsages)
+
+" Bookmarks and Breakpoints
+nmap <leader>b <Action>(ToggleBookmark)
+map {{ <Action>(GotoPreviousBookmark)
+map }} <Action>(GotoNextBookmark)
+nmap <leader>l <Action>(ToggleLineBreakpoint)
+
+" switch tabs with backspace
+nmap <BS> <Action>(Switcher) <Enter>
+
+" git
+nmap <leader><leader>gl <Action>(Git.Pull)
+nmap <leader><leader>gp <Action>(Vcs.Push)
+nmap <leader><leader>gc <Action>(CheckinProject)
+nmap <leader><leader>gr <Action>(Git.Rebase)
+
