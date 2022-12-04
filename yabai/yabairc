@@ -57,6 +57,7 @@ yabai -m rule --add app="Todoist" manage=off
 yabai -m rule --add app="Postgres" manage=off
 yabai -m rule --add app="Pritunl" manage=off
 yabai -m rule --add app="WebStorm|PhpStorm|IntelliJ" title="^Push|Pull|Preferences|Commit|Run" manage=off
+yabai -m rule --add app="^Slack$" title="*(Huddle)$" manage=off
 
 # Rules for Applications on spaces
 yabai -m rule --add app="^Slack$" space=8

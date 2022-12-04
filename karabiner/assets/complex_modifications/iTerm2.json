@@ -1,5 +1,5 @@
 {
-  "title": "Launch apps",
+  "title": "Launch iTerm2",
   "rules": [
     {
       "description": "control + option + enter opens iTerm",
@@ -9,7 +9,10 @@
           "from": {
             "key_code": "return_or_enter",
             "modifiers": {
-              "mandatory": ["left_option", "left_control"],
+              "mandatory": [
+                "left_option",
+                "left_control"
+              ],
               "optional": []
             }
           },
