@@ -1,0 +1,28 @@
+{
+  "title": "take Screenshot",
+  "rules": [
+    {
+      "description": "shift + command + s takes screenshot with flameshot",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "s",
+            "modifiers": {
+              "mandatory": [
+                "left_shift",
+                "left_command"
+              ],
+              "optional": []
+            }
+          },
+          "to": [
+            {
+              "shell_command": "open 'flameshot.app gui'"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

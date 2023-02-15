@@ -55,6 +55,7 @@ yabai -m rule --add app="Stats" manage=off
 yabai -m rule --add app="Karabiner-Elements" manage=off
 yabai -m rule --add app="Todoist" manage=off
 yabai -m rule --add app="Postgres" manage=off
+yabai -m rule --add app="Flameshot" manage=off
 yabai -m rule --add app="Pritunl" manage=off
 yabai -m rule --add app="WebStorm|PhpStorm|IntelliJ" title="^Push|Pull|Preferences|Commit|Run" manage=off
 yabai -m rule --add app="^Slack$" title="*(Huddle)$" manage=off

@@ -116,6 +116,8 @@ nmap <leader>rf <Action>(RecentFiles)
 nmap <leader>q <Action>(QuickJavaDoc)
 nmap <leader>a <Action>(Annotate)
 nmap <leader>u <Action>(FindUsages)
+nmap <leader><leader>h <Action>(LocalHistory.ShowSelectionHistory)
+
 
 " Bookmarks and Breakpoints
 nmap <leader>b <Action>(ToggleBookmark)
