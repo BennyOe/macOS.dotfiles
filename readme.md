@@ -8,6 +8,7 @@
 - Karabiner
 - Yabai
 - SketchyBar
+- [sketchybar-app-font](https://github.com/kvndrsslr/sketchybar-app-font)
 - iTerm2
 - htop
 - skhd
