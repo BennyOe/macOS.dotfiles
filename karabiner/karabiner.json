@@ -539,6 +539,29 @@
                                 "type": "basic"
                             }
                         ]
+                    },
+                    {
+                        "description": "shift + command + s takes screenshot with flameshot",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "s",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "left_shift",
+                                            "left_command"
+                                        ],
+                                        "optional": []
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "shell_command": "open 'flameshot.app gui'"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
                     }
                 ]
             },
