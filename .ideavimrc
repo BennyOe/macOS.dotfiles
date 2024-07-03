@@ -24,9 +24,11 @@ let mapleader = " "
 set NERDTree
 let g:NERDTreeMapActivateNode='l'
 let g:NERDTreeMapJumpParent='h'
+let g:NERDOpenInRightSplit='s'
+let g:NERDOpenInRightSplit='s'
 let g:NERDTreeFocus=0
 nnoremap <c-b> :NERDTreeToggle<CR>
-nmap <leader>h <Action>(ActivateProjectToolWindow)
+nmap <leader><leader>h <Action>(ActivateProjectToolWindow)
 
 " editor
 nmap + :action EditorIncreaseFontSize<CR>
@@ -66,8 +68,8 @@ nmap <leader>x <Action>(CloseContent)
 nmap <leader>sx <Action>(Unsplit)
 
 " split navigation
-nmap <leader>k <Action>(PrevSplitter)
-nmap <leader>j <Action>(NextSplitter)
+nmap <leader>h <Action>(PrevSplitter)
+nmap <leader>l <Action>(NextSplitter)
 
 " running the code
 nmap <leader><leader>rr <Action>(Run)
@@ -79,17 +81,21 @@ nmap <leader><leader>rs <Action>(Stop)
 nmap <leader>g <Action>(Generate)
 nmap <leader>rn <Action>(RenameElement)
 nmap <leader>sw <Action>(SurroundWith)
-nmap <leader>nc <Action>(NewClass)
+nmap <leader>nc <Action>(Kotlin.NewFile)
 nmap <leader>nf <Action>(NewFile)
 nmap <leader>nd <Action>(NewDir)
+
+" selection
+vmap <leader>j <Action>(EditorSelectWord)
+vmap <leader>k <Action>(EditorUnSelectWord)
 
 " line comment
 nmap <leader>c<leader> <Action>(CommentByLineComment)
 vmap <leader>c<leader> <Action>(CommentByLineComment)
 
 " errors
-nmap e <Action>(GotoNextError)
-nmap E <Action>(GotoPreviousError)
+nmap <leader>e <Action>(GotoNextError)
+nmap <leader>E <Action>(GotoPreviousError)
 
 " highlight usages
 nmap <leader>n <Action>(HighlightUsagesInFile)
@@ -106,27 +112,25 @@ nmap gt :action GotoTest<CR>
 nmap <leader>oi <Action>(OptimizeImports)
 
 " reformat the code
-map <leader>f <Action>(ReformatCode)
+map <leader>fr <Action>(ReformatCode)
 
 " open terminal
 nmap <leader>t <Action>(ActivateTerminalToolWindow)
 
 "  show
 nmap <leader>rf <Action>(RecentFiles)
-nmap <leader>q <Action>(QuickJavaDoc)
+nmap <leader>q <Action>(ShowHoverInfo)
 nmap <leader>a <Action>(Annotate)
 nmap <leader>u <Action>(FindUsages)
-nmap <leader><leader>h <Action>(LocalHistory.ShowSelectionHistory)
-
 
 " Bookmarks and Breakpoints
-nmap <leader>b <Action>(ToggleBookmark)
+nmap <leader>f <Action>(ToggleBookmark)
 map {{ <Action>(GotoPreviousBookmark)
 map }} <Action>(GotoNextBookmark)
-nmap <leader>l <Action>(ToggleLineBreakpoint)
+nmap <leader>b <Action>(ToggleLineBreakpoint)
 
 " switch tabs with backspace
-nmap <BS> <Action>(Switcher) <Enter>
+nmap <BS> <Action>(Switcher)
 
 " git
 nmap <leader><leader>gl <Action>(Git.Pull)
@@ -134,3 +138,6 @@ nmap <leader><leader>gp <Action>(Vcs.Push)
 nmap <leader><leader>gc <Action>(CheckinProject)
 nmap <leader><leader>gr <Action>(Git.Rebase)
 
+" find in files
+nmap <leader>ff <Action>(FindInPath)
+r> :comment<CR>
