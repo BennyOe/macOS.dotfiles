@@ -3,11 +3,8 @@
 ## Apps to install
 
 - Homebrew
-- Ranger
+- Yazi
 - NeoVim
 - Karabiner
-- Yabai
-- SketchyBar
-- iTerm2
-- htop
+- Wezterm
 - skhd
