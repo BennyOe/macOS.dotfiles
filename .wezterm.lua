@@ -48,6 +48,7 @@ return {
     brights = {"#414868", "#f7768e", "#9ece6a", "#e0af68", "#7aa2f7", "#bb9af7", "#7dcfff", "#c0caf5"},
   },
 
+
   -- Cursor style
   default_cursor_style = "SteadyBlock",
   cursor_blink_rate = 0,
@@ -57,7 +58,8 @@ return {
   initial_rows = 84,
 
   -- Opacity
-  window_background_opacity = 0.8,
+  window_background_opacity = 0.75,
+  macos_window_background_blur = 16,
   inactive_pane_hsb = {
     saturation = 1.0,
     brightness = 0.75,
