@@ -69,7 +69,22 @@ return {
   keys = {
     -- Add key bindings here based on your st config
     -- Example:
-    {key="q", mods="ALT", action=wezterm.action.ShowTabNavigator},
+    {key="q",
+      mods="ALT|SHIFT",
+      action=wezterm.action.ShowTabNavigator
+    },
+    {key="s",
+      mods="ALT|SHIFT",
+      action = wezterm.action.SplitVertical { domain = 'CurrentPaneDomain' },
+    },
+    {key="d",
+      mods="ALT|SHIFT",
+      action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
+    },
+    {key="w",
+      mods="ALT|SHIFT",
+      action = wezterm.action.CloseCurrentPane { confirm = false },
+    },
    -- Skip close confirmation
   },
     window_close_confirmation = 'NeverPrompt',

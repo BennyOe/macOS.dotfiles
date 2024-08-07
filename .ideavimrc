@@ -121,10 +121,10 @@ nmap <leader>t <Action>(ActivateTerminalToolWindow)
 nmap <leader>rf <Action>(RecentFiles)
 nmap <leader>q <Action>(ShowHoverInfo)
 nmap <leader>a <Action>(Annotate)
-nmap <leader>u <Action>(FindUsages)
+nmap <leader>u <Action>(ShowUsages)
 
 " Bookmarks and Breakpoints
-nmap <leader>f <Action>(ToggleBookmark)
+ nmap <leader>B <Action>(ToggleBookmark)
 map {{ <Action>(GotoPreviousBookmark)
 map }} <Action>(GotoNextBookmark)
 nmap <leader>b <Action>(ToggleLineBreakpoint)
@@ -138,6 +138,20 @@ nmap <leader><leader>gp <Action>(Vcs.Push)
 nmap <leader><leader>gc <Action>(CheckinProject)
 nmap <leader><leader>gr <Action>(Git.Rebase)
 
-" find in files
-nmap <leader>ff <Action>(FindInPath)
+" find
+nmap <leader>ff <Action>(GotoFile)
+nmap <leader>fg <Action>(FindInPath)
+vmap <leader>fg <Action>(FindInPath)
+nmap <leader>fc <Action>(GotoClass)
+nmap <leader>fs <Action>(FileStructurePopup)
 r> :comment<CR>
+
+" copilot
+nmap <leader>ca <Action>(copilot.enableCopilot)
+nmap <leader>cA <Action>(copilot.disableCopilot)
+
+" debugger
+nmap df <Action>(StepOver)
+nmap dj <Action>(StepInto)
+nmap dk <Action>(StepOut)
+nmap dg <Action>(Resume)

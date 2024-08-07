@@ -9,40 +9,34 @@ fi
 ### Exports ###
 ###############
 # Path to your Oh My Zsh installation.
+export ts="app-benni-pay.test.t24.eu-west-1.sg-cloud.co.uk"
+export PATH="$PATH:$HOME/.alinghi/bin"
+export PATH="$PATH:$HOME/.microservices/platform/bin"
+export PATH="$PATH:$HOME/scripts"
 export ZSH="$HOME/.oh-my-zsh"
 export EDITOR="nvim"
 export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time Oh My Zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+export PATH="$(brew --prefix)/bin:$PATH"
+export PATH="$(brew --prefix)/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="$(brew --prefix)/opt/findutils/libexec/gnubin:$PATH"
+export PATH="$(brew --prefix)/opt/gnu-tar/libexec/gnubin:$PATH"
+export PATH="$(brew --prefix)/opt/gnu-sed/libexec/gnubin:$PATH"
+export PATH="$(brew --prefix)/opt/gnu-indent/libexec/gnubin:$PATH"
+export PATH="$(brew --prefix)/opt/gnu-getopt/bin:$PATH"
+
+# Theme
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
+# Fuzzy find
+source <(fzf --zsh)
 
 # Uncomment the following line to enable command auto-correction.
  ENABLE_CORRECTION="true"
 
-# Uncomment the following line to display red dots whilst waiting for completion.
-# You can also set it to another string to have that shown instead of the default red dots.
-# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
-# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
+# Plugins
 plugins=(git
    git
 	colored-man-pages
@@ -73,6 +67,7 @@ alias lsla='lsd -la'
 alias vimrc='vim ~/.config/nvim/init.lua'
 alias bashrc='vim ~/.bashrc'
 alias zshrc='vim ~/.zshrc'
+alias wezrc='vim ~/.wezterm.lua'
 
 # git aliases
 alias gac='git add -A && git commit -a'
@@ -98,7 +93,10 @@ alias dcd='docker-compose down'
 alias dce='docker-compose exec'
 
 # alias for flutter riverpod
-alias riverpod='dart run build_runner watch'
+alias riverpod='fvm dart run build_runner watch'
+
+# alias for zeal dev systems
+alias vpnConnect='~/scripts/vpn_connect.sh'
 
 #yazi config
 function ra() {
@@ -114,8 +112,18 @@ function ra() {
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# java version manage
+eval "$(jenv init -)"
+
+# python version manage
+eval "$(pyenv init --path)"
+
 ## [Completion]
 ## Completion scripts setup. Remove the following line to uninstall
 [[ -f /Users/benjamin.oechsle/.dart-cli-completion/zsh-config.zsh ]] && . /Users/benjamin.oechsle/.dart-cli-completion/zsh-config.zsh || true
 ## [/Completion]
 
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
