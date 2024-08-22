@@ -1,51 +1,19 @@
-# Default settings for Amethyst
-# Repo: `https://github.com/ianyh/Amethyst`
-#
-# Note due to issue 1419 (https://github.com/ianyh/Amethyst/issues/1419) some
-# config values may conflict and not work if they are the same as the default
-# values for Amethyst. You can see these values on GitHub at
-# https://github.com/ianyh/Amethyst/blob/development/Amethyst/default.amethyst
-# If you're experiencing conflicts and the settings are the same as the default,
-# comment out the commands in this file.
-#
-# Move this file to: `~/.amethyst.yml`
-# In order to register changes restart Amethyst.
-# If you experience issues pulling in the changes you can also quit Amethyst and run: `defaults delete com.amethyst.Amethyst.plist`
-# This removes the current preferences and causes Amethyst to restart with default preferences and pull configs from this file.
-
 # layouts - Ordered list of layouts to use by layout key (default tall, wide, fullscreen, and column).
 layouts:
   - tall
   - fullscreen
-  # - tall-right
   - wide
-  # - two-pane
-  # - middle-wide
-  # - 3column-left
   - middle-wide # The legacy name of "3column-middle"
-  # - 3column-right
-  # - 4column-left
-  # - 4column-right
   - column
-  # - row
-  # - floating
-  # - widescreen-tall
-  # - widescreen-tall-right
-  # - bsp
 
 # First mod (default option + shift).
 mod1:
   - option
-  # - shift
-  # - control
-  # - command
 
 # Second mod (default option + shift + control).
 mod2:
   - option
   - shift
-  # - control
-  # - command
 
 # Commands:
 # special key values
@@ -89,23 +57,6 @@ increase-main:
 decrease-main:
   mod: mod1
   key: down
-
-# General purpose command for custom layouts. Functionality is layout-dependent.
-# command1:
-#   mod: <NONE>
-#   key: <NONE>
-# General purpose command for custom layouts. Functionality is layout-dependent.
-# command2:
-#   mod: <NONE>
-#   key: <NONE>
-# General purpose command for custom layouts. Functionality is layout-dependent.
-# command3:
-#   mod: <NONE>
-#   key: <NONE>
-# General purpose command for custom layouts. Functionality is layout-dependent.
-# command4:
-#   mod: <NONE>
-#   key: <NONE>
 
 # Focus the next window in the list going counter-clockwise.
 focus-ccw:
@@ -157,26 +108,6 @@ swap-main:
   mod: mod2
   key: enter
 
-# Move focus to the n-th screen in the list; e.g., focus-screen-3 will move mouse focus to the 3rd screen. Note that the main window in the given screen will be focused.
-#focus-screen-n:
-# focus-screen-<screen-number>:
-#   mod: mod1
-#   key: y
-# Move the currently focused window to the n-th screen; e.g., throw-screen-3 will move the window to the 3rd screen.
-# throw-screen-n:
-# throw-screen-<screen-number>:
-#   mod: mod1
-#   key: u
-# Move the currently focused window to the n-th space; e.g., throw-space-3 will move the window to the 3rd space.
-# throw-space-<screen-number>:
-#   mod: mod1
-#   key: i
-
-# Select tall layout
-# select-tall-layout:
-#   mod: mod1
-#   key: a
-
 # # Select wide layout
 select-wide-layout:
   mod: mod1
@@ -186,11 +117,6 @@ select-wide-layout:
 select-fullscreen-layout:
   mod: mod1
   key: f
-
-# # Select column layout
-# select-column-layout:
-#   mod: mod1
-#   key: f
 
 # Move the currently focused window to the space to the left.
 throw-space-left:
@@ -300,19 +226,19 @@ new-windows-to-main: false
 follow-space-thrown-windows: true
 
 # The integer percentage of the screen dimension to increment and decrement main pane ratios by (default 5).
-window-resize-step: 5
+window-resize-step: 0
 
 # Padding to apply between windows and the left edge of the screen (in px, default 0).
-screen-padding-left: 5
+screen-padding-left: 0
 
 # Padding to apply between windows and the right edge of the screen (in px, default 0).
-screen-padding-right: 5
+screen-padding-right: 0
 
 # Padding to apply between windows and the top edge of the screen (in px, default 0).
-screen-padding-top: 5
+screen-padding-top: 0
 
 # Padding to apply between windows and the bottom edge of the screen (in px, default 0).
-screen-padding-bottom: 5
+screen-padding-bottom: 0
 
 # true to maintain layout state across application executions (default true).
 restore-layouts-on-launch: true
