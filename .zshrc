@@ -10,6 +10,7 @@ fi
 ###############
 # Path to your Oh My Zsh installation.
 export ts="app-benni-pay.test.t24.eu-west-1.sg-cloud.co.uk"
+export TESTSYSTEM="app-benni-pay.test.t24.eu-west-1.sg-cloud.co.uk"
 export PATH="$PATH:$HOME/.alinghi/bin"
 export PATH="$PATH:$HOME/.microservices/platform/bin"
 export PATH="$PATH:$HOME/scripts"

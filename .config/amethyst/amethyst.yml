@@ -1,4 +1,3 @@
-# layouts - Ordered list of layouts to use by layout key (default tall, wide, fullscreen, and column).
 layouts:
   - tall
   - fullscreen
@@ -154,9 +153,9 @@ toggle-float:
 #   key: x
 
 # Automatically quit and reopen Amethyst.
-# relaunch-amethyst:
-#    mod: mod2
-#    key: R
+relaunch-amethyst:
+   mod: mod2
+   key: z
 
 # disable screen padding on builtin display
 disable-padding-on-builtin-display: false
@@ -184,7 +183,7 @@ window-minimum-height: 0
 window-minimum-width: 0
 
 # List of bundle identifiers for applications to either be automatically floating or automatically tiled based on floating-is-blacklist (default []).
-floating: []
+floating: [com.jetbrains.intellij, com.apple.systempreferences, us.zoom.xos, com.openai.chat, org.flameshot, org.pqrs.Karabiner-Elements.Settings, com.spotify.client, net.whatsapp.WhatsApp, com.apple.calculator, org.whispersystems.signal-desktop, org.pqrs.Karabiner-EventViewer, com.apple.finder]
 
 # Boolean flag determining behavior of the floating list. true if the applications should be floating and all others tiled. false if the applications should be tiled and all others floating (default true).
 floating-is-blacklist: true

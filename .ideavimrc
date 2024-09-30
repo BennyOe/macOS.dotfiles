@@ -1,4 +1,4 @@
-"======================================================================================================================
+======================================================================================================================
 " Useful hints to setup the IDE
 
 " To cycle with tab through code completion options set the 'selectNextCompletionOption' in the settings to tab and remove tab from the standard behaviour
@@ -64,7 +64,7 @@ nmap <c-l> <action>(NextTab)
 " split views
 nnoremap <leader>V :vsplit<CR>
 nnoremap <leader>H :split<CR>
-nmap <leader>x <Action>(CloseContent)
+nmap <leader>x <Action>(CloseAllEditors)
 nmap <leader>sx <Action>(Unsplit)
 
 " split navigation
@@ -83,6 +83,7 @@ nmap <leader>rn <Action>(RenameElement)
 nmap <leader>sw <Action>(SurroundWith)
 nmap <leader>nc <Action>(Kotlin.NewFile)
 nmap <leader>nf <Action>(NewFile)
+nmap <leader>ns <Action>(NewScratchFile)
 nmap <leader>nd <Action>(NewDir)
 
 " selection
@@ -107,6 +108,7 @@ nmap gi :action GotoImplementation<CR>
 nmap gs :action GotoSuperMethod<CR>
 nmap gd :action GotoDeclaration<CR>
 nmap gt :action GotoTest<CR>
+nmap gp <Action>(ManageRecentProjects)
 
 " imports
 nmap <leader>oi <Action>(OptimizeImports)
@@ -120,14 +122,18 @@ nmap <leader>t <Action>(ActivateTerminalToolWindow)
 "  show
 nmap <leader>rf <Action>(RecentFiles)
 nmap <leader>q <Action>(ShowHoverInfo)
+nmap <leader><leader>q <Action>(QuickImplementations)
 nmap <leader>a <Action>(Annotate)
 nmap <leader>u <Action>(ShowUsages)
+nmap <leader>h <Action>(CallHierarchy)
 
 " Bookmarks and Breakpoints
- nmap <leader>B <Action>(ToggleBookmark)
+nmap <leader>B <Action>(ToggleBookmark)
 map {{ <Action>(GotoPreviousBookmark)
 map }} <Action>(GotoNextBookmark)
 nmap <leader>b <Action>(ToggleLineBreakpoint)
+nmap <leader><leader>b <Action>(ViewBreakpoints)
+nmap <leader><leader>B <Action>(ActivateBookmarksToolWindow)
 
 " switch tabs with backspace
 nmap <BS> <Action>(Switcher)
@@ -143,6 +149,7 @@ nmap <leader>ff <Action>(GotoFile)
 nmap <leader>fg <Action>(FindInPath)
 vmap <leader>fg <Action>(FindInPath)
 nmap <leader>fc <Action>(GotoClass)
+vmap <leader>fc <Action>(GotoClass)
 nmap <leader>fs <Action>(FileStructurePopup)
 r> :comment<CR>
 

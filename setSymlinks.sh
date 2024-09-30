@@ -8,4 +8,5 @@ ln -sv ~/macOS.dotfiles/.config/skhd/ ~/.config/skhd
 ln -sv ~/macOS.dotfiles/.config/yazi/ ~/.config/yazi
 ln -sv ~/macOS.dotfiles/.wezterm.lua ~/
 ln -sv ~/macOS.dotfiles/.ideavimrc ~/
+ln -sv ~/macOS.dotfiles/.tmux.conf ~/
 

@@ -82,7 +82,7 @@ return {
       action = wezterm.action.SplitHorizontal { domain = 'CurrentPaneDomain' },
     },
     -- needs to pressed twice to close the pane
-    {key="z",
+    {key="a",
       mods="ALT|SHIFT",
       action = wezterm.action.CloseCurrentPane { confirm = false },
     },
