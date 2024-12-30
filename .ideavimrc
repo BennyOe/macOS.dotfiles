@@ -1,4 +1,5 @@
 ======================================================================================================================
+added comment for ChargebackWatchDao and timejump between payins
 " Useful hints to setup the IDE
 
 " To cycle with tab through code completion options set the 'selectNextCompletionOption' in the settings to tab and remove tab from the standard behaviour
@@ -125,7 +126,7 @@ nmap <leader>q <Action>(ShowHoverInfo)
 nmap <leader><leader>q <Action>(QuickImplementations)
 nmap <leader>a <Action>(Annotate)
 nmap <leader>u <Action>(ShowUsages)
-nmap <leader>h <Action>(CallHierarchy)
+nmap <leader>i <Action>(CallHierarchy)
 
 " Bookmarks and Breakpoints
 nmap <leader>B <Action>(ToggleBookmark)
@@ -162,3 +163,4 @@ nmap df <Action>(StepOver)
 nmap dj <Action>(StepInto)
 nmap dk <Action>(StepOut)
 nmap dg <Action>(Resume)
+nmap dm <Action>(XDebugger.MuteBreakpoints)

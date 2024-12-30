@@ -216,7 +216,7 @@ enables-layout-hud: true
 enables-layout-hud-on-space-change: false
 
 # true to get updates to beta versions of the software (default false).
-use-canary-build: false
+use-canary-build: true
 
 # true to insert new windows into the first position and false to insert new windows into the last position (default false).
 new-windows-to-main: false

@@ -27,6 +27,7 @@ export PATH="$(brew --prefix)/opt/gnu-tar/libexec/gnubin:$PATH"
 export PATH="$(brew --prefix)/opt/gnu-sed/libexec/gnubin:$PATH"
 export PATH="$(brew --prefix)/opt/gnu-indent/libexec/gnubin:$PATH"
 export PATH="$(brew --prefix)/opt/gnu-getopt/bin:$PATH"
+export ADYEN_HOST_PORT="payment-simulator.pay.svc.cluster.local:5433"
 
 # Theme
 ZSH_THEME="powerlevel10k/powerlevel10k"
