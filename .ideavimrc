@@ -66,6 +66,7 @@ nmap <c-l> <action>(NextTab)
 nnoremap <leader>V :vsplit<CR>
 nnoremap <leader>H :split<CR>
 nmap <leader>x <Action>(CloseAllEditors)
+nmap <leader><leader>x <Action>(HideActiveWindow)
 nmap <leader>sx <Action>(Unsplit)
 
 " split navigation
@@ -78,10 +79,7 @@ nmap <leader><leader>rd <Action>(Debug)
 nmap <leader><leader>ra <Action>(Rerun)
 nmap <leader><leader>rs <Action>(Stop)
 
-" code commands
-nmap <leader>g <Action>(Generate)
-nmap <leader>rn <Action>(RenameElement)
-nmap <leader>sw <Action>(SurroundWith)
+" new file
 nmap <leader>nc <Action>(Kotlin.NewFile)
 nmap <leader>nf <Action>(NewFile)
 nmap <leader>ns <Action>(NewScratchFile)
@@ -110,6 +108,7 @@ nmap gs :action GotoSuperMethod<CR>
 nmap gd :action GotoDeclaration<CR>
 nmap gt :action GotoTest<CR>
 nmap gp <Action>(ManageRecentProjects)
+nmap gr <Action>($LRU)
 
 " imports
 nmap <leader>oi <Action>(OptimizeImports)
@@ -121,18 +120,19 @@ map <leader>fr <Action>(ReformatCode)
 nmap <leader>t <Action>(ActivateTerminalToolWindow)
 
 "  show
-nmap <leader>rf <Action>(RecentFiles)
 nmap <leader>q <Action>(ShowHoverInfo)
 nmap <leader><leader>q <Action>(QuickImplementations)
 nmap <leader>a <Action>(Annotate)
 nmap <leader>u <Action>(ShowUsages)
 nmap <leader>i <Action>(CallHierarchy)
+nmap <leader>v <Action>(ParameterInfo)
 
 " Bookmarks and Breakpoints
 nmap <leader>B <Action>(ToggleBookmark)
 map {{ <Action>(GotoPreviousBookmark)
 map }} <Action>(GotoNextBookmark)
 nmap <leader>b <Action>(ToggleLineBreakpoint)
+nmap <leader>be <Action>(ToggleBreakpointEnabled)
 nmap <leader><leader>b <Action>(ViewBreakpoints)
 nmap <leader><leader>B <Action>(ActivateBookmarksToolWindow)
 
@@ -144,6 +144,7 @@ nmap <leader><leader>gl <Action>(Git.Pull)
 nmap <leader><leader>gp <Action>(Vcs.Push)
 nmap <leader><leader>gc <Action>(CheckinProject)
 nmap <leader><leader>gr <Action>(Git.Rebase)
+nmap <leader><leader>gh <Action>(Vcs.ShowTabbedFileHistory)
 
 " find
 nmap <leader>ff <Action>(GotoFile)
@@ -157,6 +158,7 @@ r> :comment<CR>
 " copilot
 nmap <leader>ca <Action>(copilot.enableCopilot)
 nmap <leader>cA <Action>(copilot.disableCopilot)
+nmap <leader>cc <Action>(copilot.chat.inline)
 
 " debugger
 nmap df <Action>(StepOver)
@@ -164,3 +166,19 @@ nmap dj <Action>(StepInto)
 nmap dk <Action>(StepOut)
 nmap dg <Action>(Resume)
 nmap dm <Action>(XDebugger.MuteBreakpoints)
+
+" refactor
+vmap <leader>ef <Action>(ExtractFunction)
+nmap <leader>ef <Action>(ExtractFunction)
+vmap <leader>ev <Action>(IntroduceVariable)
+nmap <leader>ev <Action>(IntroduceVariable)
+vmap <leader>ec <Action>(IntroduceConstant)
+nmap <leader>ec <Action>(IntroduceConstant)
+vmap <leader>ee <Action>(Refactorings.QuickListPopupAction)
+nmap <leader>ee <Action>(Refactorings.QuickListPopupAction)
+nmap <leader>g <Action>(Generate)
+nmap <leader>rn <Action>(RenameElement)
+nmap <leader>sw <Action>(SurroundWith)
+vmap <leader>sw <Action>(SurroundWith)
+nmap <leader>su <Action>(Unwrap)
+vmap <leader>su <Action>(Unwrap)

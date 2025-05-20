@@ -1,9 +1,7 @@
 layouts:
-  - tall
-  - fullscreen
+  - column
   - wide
   - middle-wide # The legacy name of "3column-middle"
-  - column
 
 # First mod (default option + shift).
 mod1:
