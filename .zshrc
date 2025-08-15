@@ -110,6 +110,9 @@ function ra() {
 	rm -f -- "$tmp"
 }
 
+#zsh-autosuggestions color (type 'spectrum_ls' to see the colors)
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=242' 
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

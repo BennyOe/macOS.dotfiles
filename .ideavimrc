@@ -34,7 +34,6 @@ nmap <leader><leader>h <Action>(ActivateProjectToolWindow)
 " editor
 nmap + :action EditorIncreaseFontSize<CR>
 nmap - :action EditorDecreaseFontSize<CR>
-nmap = :action EditorResetFontSize<CR>
 
 " movements
 vmap <c-j> <Action>(MoveLineDown)
@@ -58,16 +57,11 @@ nmap <leader>P "+P
 vmap <leader>p "+p
 vmap <leader>P "+P
 
-" switching tabs
-nmap <c-h> <action>(PreviousTab)
-nmap <c-l> <action>(NextTab)
-
 " split views
-nnoremap <leader>V :vsplit<CR>
-nnoremap <leader>H :split<CR>
+nnoremap <leader>sv :vsplit<CR>
+nnoremap <leader>sh :split<CR>
 nmap <leader>x <Action>(CloseAllEditors)
 nmap <leader><leader>x <Action>(HideActiveWindow)
-nmap <leader>sx <Action>(Unsplit)
 
 " split navigation
 nmap <leader>h <Action>(PrevSplitter)
@@ -82,7 +76,6 @@ nmap <leader><leader>rs <Action>(Stop)
 " new file
 nmap <leader>nc <Action>(Kotlin.NewFile)
 nmap <leader>nf <Action>(NewFile)
-nmap <leader>ns <Action>(NewScratchFile)
 nmap <leader>nd <Action>(NewDir)
 
 " selection
@@ -123,17 +116,19 @@ nmap <leader>t <Action>(ActivateTerminalToolWindow)
 nmap <leader>q <Action>(ShowHoverInfo)
 nmap <leader><leader>q <Action>(QuickImplementations)
 nmap <leader>a <Action>(Annotate)
-nmap <leader>u <Action>(ShowUsages)
-nmap <leader>i <Action>(CallHierarchy)
-nmap <leader>v <Action>(ParameterInfo)
+nmap <leader>su <Action>(ShowUsages)
+nmap <leader>sh <Action>(CallHierarchy)
+nmap <leader>sp <Action>(ParameterInfo)
+nmap <leader>ss <Action>(FileStructurePopup)
 
 " Bookmarks and Breakpoints
-nmap <leader>B <Action>(ToggleBookmark)
-map {{ <Action>(GotoPreviousBookmark)
-map }} <Action>(GotoNextBookmark)
 nmap <leader>b <Action>(ToggleLineBreakpoint)
 nmap <leader>be <Action>(ToggleBreakpointEnabled)
 nmap <leader><leader>b <Action>(ViewBreakpoints)
+
+nmap <leader>B <Action>(ToggleBookmark)
+map {{ <Action>(GotoPreviousBookmark)
+map }} <Action>(GotoNextBookmark)
 nmap <leader><leader>B <Action>(ActivateBookmarksToolWindow)
 
 " switch tabs with backspace
@@ -145,6 +140,7 @@ nmap <leader><leader>gp <Action>(Vcs.Push)
 nmap <leader><leader>gc <Action>(CheckinProject)
 nmap <leader><leader>gr <Action>(Git.Rebase)
 nmap <leader><leader>gh <Action>(Vcs.ShowTabbedFileHistory)
+vmap <leader><leader>gh <Action>(Vcs.ShowHistoryForBlock)
 
 " find
 nmap <leader>ff <Action>(GotoFile)
@@ -152,8 +148,6 @@ nmap <leader>fg <Action>(FindInPath)
 vmap <leader>fg <Action>(FindInPath)
 nmap <leader>fc <Action>(GotoClass)
 vmap <leader>fc <Action>(GotoClass)
-nmap <leader>fs <Action>(FileStructurePopup)
-r> :comment<CR>
 
 " copilot
 nmap <leader>ca <Action>(copilot.enableCopilot)
@@ -161,6 +155,7 @@ nmap <leader>cA <Action>(copilot.disableCopilot)
 nmap <leader>cc <Action>(copilot.chat.inline)
 
 " debugger
+nmap de <Action>(EvaluateExpression)
 nmap df <Action>(StepOver)
 nmap dj <Action>(StepInto)
 nmap dk <Action>(StepOut)
@@ -178,7 +173,7 @@ vmap <leader>ee <Action>(Refactorings.QuickListPopupAction)
 nmap <leader>ee <Action>(Refactorings.QuickListPopupAction)
 nmap <leader>g <Action>(Generate)
 nmap <leader>rn <Action>(RenameElement)
-nmap <leader>sw <Action>(SurroundWith)
-vmap <leader>sw <Action>(SurroundWith)
-nmap <leader>su <Action>(Unwrap)
-vmap <leader>su <Action>(Unwrap)
+nmap <leader>w <Action>(SurroundWith)
+vmap <leader>w <Action>(SurroundWith)
+nmap <leader>u <Action>(Unwrap)
+vmap <leader>u <Action>(Unwrap)
