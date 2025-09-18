@@ -134,6 +134,10 @@ nmap <leader><leader>B <Action>(ActivateBookmarksToolWindow)
 " switch tabs with backspace
 nmap <BS> <Action>(Switcher)
 
+" folding / collapsing code
+nmap <leader>z <Action>(CollapseRegion)
+nmap <leader>Z <Action>(ExpandRegion)
+
 " git
 nmap <leader><leader>gl <Action>(Git.Pull)
 nmap <leader><leader>gp <Action>(Vcs.Push)
